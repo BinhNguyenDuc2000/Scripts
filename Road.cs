@@ -13,9 +13,9 @@ public class Road : MonoBehaviour
         checkpoint.SetRoad(this);
     }
 
-    public void AgentWentThrough()
+    public void AgentWentThrough(float x)
     {
-        roadsManager.AgentWentThrough(this);
+        roadsManager.AgentWentThrough(this, x);
     }
 
     public void SetRoadsManager(RoadsManager roadsManager)

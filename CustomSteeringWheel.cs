@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Text;
 
@@ -65,9 +66,12 @@ public class CustomSteeringWheel : MonoBehaviour
 
     public void StopSteeringWheel()
     {
-        LogitechGSDK.LogiPlaySpringForce(0, 0, 50, 50);
-        activeForceAndEffect[0] = "Spring Force\n ";
-
+        try {
+            LogitechGSDK.LogiPlaySpringForce(0, 0, 50, 50);
+            activeForceAndEffect[0] = "Spring Force\n ";
+        }
+        catch (Exception e) {
+        }  
     }
 
     public float GetSteeringWheel()

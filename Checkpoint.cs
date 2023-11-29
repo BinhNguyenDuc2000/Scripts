@@ -10,7 +10,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.gameObject.tag == "Car")
         {
-            road.AgentWentThrough();   
+            road.AgentWentThrough(other.transform.position.x);   
         }
     }
 

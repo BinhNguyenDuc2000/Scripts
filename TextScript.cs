@@ -13,18 +13,15 @@ public class TextScript : MonoBehaviour
     [SerializeField] private GameObject brakeInputText;
     [SerializeField] private GameObject readyText;
 
-    [SerializeField] private GameObject carObject;
-    
+    [SerializeField] private CarControllerAgent car;
+
     private TextMeshPro accelerationTextMeshPro;
     private TextMeshPro speedTextMeshPro;
     private TextMeshPro steerAngleTextMeshPro;
     private TextMeshPro brakeTextMeshPro;
     private TextMeshPro readyTextMeshPro;
 
-    private CarControllerAgent car;
-
     private void Start() {
-        car = carObject.GetComponent<CarControllerAgent>();
         accelerationTextMeshPro = accelerationText.GetComponent<TextMeshPro>();
         speedTextMeshPro = speedText.GetComponent<TextMeshPro>();
         steerAngleTextMeshPro = steerAngleText.GetComponent<TextMeshPro>();
@@ -34,10 +31,10 @@ public class TextScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        accelerationTextMeshPro.text = "Acceleration: " + car.GetAcceleration();
-        speedTextMeshPro.text = "Speed: " + car.GetCarSpeed();
-        steerAngleTextMeshPro.text = "Steer Angle: " + car.GetSteerAngle();
-        brakeTextMeshPro.text = "Brake: " + car.GetBrakeInput();
+        // accelerationTextMeshPro.text = "Acceleration: " + car.GetAcceleration();
+        // speedTextMeshPro.text = "Speed: " + car.GetCarSpeed();
+        // steerAngleTextMeshPro.text = "Steer Angle: " + car.GetSteerAngle();
+        // brakeTextMeshPro.text = "Brake: " + car.GetBrakeInput();
 
         if(car.GetReadyDelayTime() > 0)
             readyTextMeshPro.text = "" + (car.GetReadyDelayTime()/60 + 1);
